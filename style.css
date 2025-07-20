@@ -1,0 +1,230 @@
+/* Enhanced Styles with Color Theme System */
+.font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Base Transitions */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Default Theme (Blue) */
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --primary-light: #dbeafe;
+    --primary-bg: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    --nav-bg: #ffffff;
+    --card-bg: #ffffff;
+    --secondary-bg: #f3f4f6;
+    --accent-bg: #dbeafe;
+    --primary-text: #3b82f6;
+    --body-bg: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+/* Purple Theme */
+[data-theme="purple"] {
+    --primary-color: #8b5cf6;
+    --primary-hover: #7c3aed;
+    --primary-light: #ede9fe;
+    --primary-bg: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+    --accent-bg: #ede9fe;
+    --primary-text: #8b5cf6;
+    --body-bg: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+}
+
+/* Green Theme */
+[data-theme="green"] {
+    --primary-color: #10b981;
+    --primary-hover: #059669;
+    --primary-light: #d1fae5;
+    --primary-bg: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    --accent-bg: #d1fae5;
+    --primary-text: #10b981;
+    --body-bg: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+/* Orange Theme */
+[data-theme="orange"] {
+    --primary-color: #f97316;
+    --primary-hover: #ea580c;
+    --primary-light: #fed7aa;
+    --primary-bg: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+    --accent-bg: #fed7aa;
+    --primary-text: #f97316;
+    --body-bg: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+}
+
+/* Teal Theme */
+[data-theme="teal"] {
+    --primary-color: #14b8a6;
+    --primary-hover: #0d9488;
+    --primary-light: #a7f3d0;
+    --primary-bg: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+    --accent-bg: #a7f3d0;
+    --primary-text: #14b8a6;
+    --body-bg: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+}
+
+/* Rose Theme */
+[data-theme="rose"] {
+    --primary-color: #f43f5e;
+    --primary-hover: #e11d48;
+    --primary-light: #fecdd3;
+    --primary-bg: linear-gradient(135deg, #fecdd3 0%, #fda4af 100%);
+    --accent-bg: #fecdd3;
+    --primary-text: #f43f5e;
+    --body-bg: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+}
+
+/* Apply theme colors */
+body {
+    background: var(--body-bg);
+}
+
+.nav-bg {
+    background-color: var(--nav-bg);
+}
+
+.card-bg {
+    background-color: var(--card-bg);
+}
+
+.secondary-bg {
+    background-color: var(--secondary-bg);
+}
+
+.accent-bg {
+    background-color: var(--accent-bg);
+}
+
+.primary-text {
+    color: var(--primary-text);
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.focus\:border-primary:focus {
+    border-color: var(--primary-color);
+}
+
+/* Tab Navigation */
+.tab-btn {
+    background-color: transparent;
+    color: #6b7280;
+    border: 1px solid transparent;
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: var(--secondary-bg);
+    color: #374151;
+}
+
+/* Subject Cards */
+.subject-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.subject-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Status Colors */
+.status-excellent { color: #10b981; }
+.status-good { color: #f59e0b; }
+.status-needs-improvement { color: #ef4444; }
+
+/* Theme Selector */
+.theme-option.selected .theme-preview {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    --nav-bg: #374151;
+    --card-bg: #374151;
+    --secondary-bg: #4b5563;
+    --body-bg: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+.dark-mode {
+    color: #f9fafb;
+}
+
+.dark-mode .text-gray-600 {
+    color: #e5e7eb;
+}
+
+.dark-mode .text-gray-700 {
+    color: #d1d5db;
+}
+
+.dark-mode input,
+.dark-mode select {
+    background-color: #4b5563;
+    border-color: #6b7280;
+    color: #f9fafb;
+}
+
+.dark-mode .tab-btn:hover:not(.active) {
+    background-color: #4b5563;
+    color: #d1d5db;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .subject-card {
+        padding: 1rem;
+    }
+    
+    .theme-modal .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Button Active States */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Modal Transitions */
+.modal-enter {
+    animation: modalEnter 0.3s ease-out;
+}
+
+@keyframes modalEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
